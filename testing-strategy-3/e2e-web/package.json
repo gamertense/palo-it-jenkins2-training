@@ -27,6 +27,7 @@
     "cucumber-json-merge": "0.0.7",
     "cypress": "8.4.0",
     "cypress-cucumber-preprocessor": "^4.2.0",
+    "cypress-tags": "^0.3.0",
     "dayjs": "^1.10.7",
     "jwt-decode": "^3.1.2"
   },
