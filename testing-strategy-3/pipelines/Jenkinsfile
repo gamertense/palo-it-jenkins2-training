@@ -21,6 +21,7 @@ pipeline {
                 dir("${PROJECT_PATH}") {
                     sh '''
                         cd web
+                        kill $(lsof -t -i:3000)
                         npm i
                         npm run start&
                     '''
@@ -33,6 +34,8 @@ pipeline {
                 dir("${PROJECT_PATH}") {
                     sh '''
                         cd e2e-web
+                        pwd
+                        ls
                         npm i
                         npm run test
                         kill $(lsof -t -i:3000)
