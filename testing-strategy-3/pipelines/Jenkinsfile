@@ -16,23 +16,23 @@ pipeline {
         stage('Build') {
            steps {
                 dir("${PROJECT_PATH}") {
-                    // sh """
-                    // cd web
-                    // npm i
-                    // npm run start&
-                    // """
+                    sh """
+                        cd web
+                        npm i
+                        npm run start
+                    """
                 }
             }
         }
         stage('Test environment DEV') {
             steps {
                 dir("${PROJECT_PATH}") {
-                //    sh """
-                //     cd e2e-web
-                //     npm i
-                //     npm run test
-                //     kill $(lsof -t -i:3000)
-                //     """
+                   sh """
+                        cd e2e-web
+                        npm i
+                        npm run test
+                        kill $(lsof -t -i:3000)
+                    """
                 }
             }
         }
