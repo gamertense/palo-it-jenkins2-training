@@ -27,7 +27,7 @@ pipeline {
         stage('Test environment DEV') {
             steps {
                 dir("${PROJECT_PATH}") {
-                   sh """
+                    sh """
                         cd e2e-web
                         npm i
                         npm run test
