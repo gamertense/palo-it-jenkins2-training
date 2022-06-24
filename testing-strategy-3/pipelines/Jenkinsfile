@@ -30,9 +30,8 @@ pipeline {
 
         stage('Prepare test environment on DEV') {
             steps {
-                dir("${PROJECT_PATH}") {
+                dir("${E2E_WEB_PATH}") {
                     sh '''
-                        cd e2e-web
                         pwd
                         ls
                         npm i
