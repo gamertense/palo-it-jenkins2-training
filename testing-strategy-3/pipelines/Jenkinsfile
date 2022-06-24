@@ -35,7 +35,7 @@ pipeline {
                         pwd
                         ls
                         npm i
-                        npm run test:edge
+                        cypress-tags run -e TAGS='not @skip and not @draft'
                     '''
                 }
             }
