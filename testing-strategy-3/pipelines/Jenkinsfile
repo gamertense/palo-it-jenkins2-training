@@ -35,7 +35,7 @@ pipeline {
                         pwd
                         ls
                         npm i
-                        npm run test
+                        npm run test:edge
                     '''
                 }
             }
