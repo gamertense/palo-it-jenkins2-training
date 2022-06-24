@@ -17,7 +17,9 @@ pipeline {
            steps {
                 dir("${SCRIPTS_PATH}") {
                     sh """
-                    echo "Build"
+                    cd web
+                    npm i
+                    npm run build
                     """
                 }
             }
@@ -26,7 +28,9 @@ pipeline {
             steps {
                 dir("${SCRIPTS_PATH}") {
                    sh """
-                    echo "Test"
+                    cd e2e-web
+                    npm i
+                    npm run test
                     """
                 }
             }
