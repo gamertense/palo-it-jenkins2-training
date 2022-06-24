@@ -17,9 +17,9 @@ pipeline {
            steps {
                 dir("${PROJECT_PATH}") {
                     sh """
-                    cd web
-                    npm i
-                    npm run start&
+                        cd web
+                        npm i
+                        npm run start&
                     """
                 }
             }
@@ -28,10 +28,10 @@ pipeline {
             steps {
                 dir("${PROJECT_PATH}") {
                    sh """
-                    cd e2e-web
-                    npm i
-                    npm run test
-                    kill $(lsof -t -i:3000)
+                        cd e2e-web
+                        npm i
+                        npm run test
+                        kill $(lsof -t -i:3000)
                     """
                 }
             }
