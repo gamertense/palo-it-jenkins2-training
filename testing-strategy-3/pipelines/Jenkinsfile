@@ -36,8 +36,8 @@ pipeline {
                         pwd
                         ls
                         npm i
-                        npm run test
                     '''
+                    sh 'npm run test'
                 }
             }
             post{
