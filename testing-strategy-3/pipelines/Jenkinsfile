@@ -17,11 +17,9 @@ pipeline {
            steps {
                 dir("${PROJECT_PATH}") {
                     sh """
-                    pwd
-                    ls
                     cd web
                     npm i
-                    npm run build
+                    npm run start&
                     """
                 }
             }
@@ -33,6 +31,7 @@ pipeline {
                     cd e2e-web
                     npm i
                     npm run test
+                    kill $(lsof -t -i:3000)
                     """
                 }
             }
